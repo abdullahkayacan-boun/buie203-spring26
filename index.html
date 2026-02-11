@@ -38,16 +38,40 @@
                 <p></p>
             </div>
 
-            <!-- Problem Sessions Grid -->
-            <div class="ps-grid" id="psGrid">
-                <!-- PS items will be dynamically generated -->
-            </div>
+            <!-- Two-Column Layout: Announcements + Problem Sessions -->
+            <div class="content-wrapper">
+                <!-- Announcements Section -->
+                <aside class="announcements-section">
+                    <div class="section-header">
+                        <h2>📢 Announcements</h2>
+                    </div>
+                    <div class="announcements-list" id="announcementsList">
+                        <div class="announcement-item">
+                            <div class="announcement-date">Feb 11, 2026</div>
+                            <div class="announcement-content">
+                                <h3>No Class Tomorrow</h3>
+                                <p>There will be no class on Thursday, February 12, 2026.</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
 
-            <!-- Empty State (shown when no PS available) -->
-            <div class="empty-state" id="emptyState" style="display: none;">
-                <div class="empty-icon">📚</div>
-                <h3>No Problem Sessions Available Yet</h3>
-                <p>Problem session materials will be posted here as they become available.</p>
+                <!-- Problem Sessions Section -->
+                <section class="ps-section">
+                    <div class="section-header">
+                        <h2>📚 Problem Sessions</h2>
+                    </div>
+                    <div class="ps-grid" id="psGrid">
+                        <!-- PS items will be dynamically generated -->
+                    </div>
+
+                    <!-- Empty State (shown when no PS available) -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <div class="empty-icon">📚</div>
+                        <h3>No Problem Sessions Available Yet</h3>
+                        <p>Problem session materials will be posted here as they become available.</p>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
