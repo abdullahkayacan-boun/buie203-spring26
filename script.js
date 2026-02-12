@@ -59,6 +59,18 @@
     }
 
     /**
+     * Get version for specific PS (for cache busting)
+     * @param {number} psNumber - PS number
+     * @returns {string} Version string
+     */
+    function getVersionForPS(psNumber) {
+        const versions = {
+            1: "v2" // Update this when you change PS 1 files
+        };
+        return versions[psNumber] || "v1";
+    }
+
+    /**
      * Get note for specific PS (if any)
      * @param {number} psNumber - PS number
      * @returns {string|null} Note text or null
@@ -82,18 +94,23 @@
     function createPSCard(ps, index) {
         const animationDelay = (index * 0.1) + 0.4;
         const note = getNoteForPS(ps.number);
+        const version = getVersionForPS(ps.number);
+
+        // Add version parameter to URLs for cache busting
+        const questionUrlWithVersion = `${ps.questionUrl}?v=${version}`;
+        const solutionUrlWithVersion = ps.solutionUrl ? `${ps.solutionUrl}?v=${version}` : null;
 
         return `
             <div class="ps-card" style="animation-delay: ${animationDelay}s">
                 <span class="ps-number">PS ${ps.number}</span>
                 <h3 class="ps-title">Problem Session ${ps.number}</h3>
                 <div class="ps-links">
-                    <a href="${ps.questionUrl}" class="ps-link questions" target="_blank" rel="noopener">
+                    <a href="${questionUrlWithVersion}" class="ps-link questions" target="_blank" rel="noopener">
                         <span>📄</span>
                         <span>Questions</span>
                     </a>
-                    ${ps.solutionUrl ? `
-                        <a href="${ps.solutionUrl}" class="ps-link solutions" target="_blank" rel="noopener">
+                    ${solutionUrlWithVersion ? `
+                        <a href="${solutionUrlWithVersion}" class="ps-link solutions" target="_blank" rel="noopener">
                             <span>✓</span>
                             <span>Solutions</span>
                         </a>
