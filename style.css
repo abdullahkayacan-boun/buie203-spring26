@@ -387,6 +387,31 @@ body {
 }
 
 /* ===========================
+   PS Note Section
+   =========================== */
+.ps-note {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.ps-note-date {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.ps-note-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+
+/* ===========================
    Empty State
    =========================== */
 .empty-state {

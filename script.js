@@ -1,7 +1,7 @@
 // IE 203 Problem Sessions - Dynamic Content Loader
 // This script automatically detects and displays available problem sessions
 
-(function() {
+(function () {
     'use strict';
 
     // Configuration
@@ -59,6 +59,21 @@
     }
 
     /**
+     * Get note for specific PS (if any)
+     * @param {number} psNumber - PS number
+     * @returns {string|null} Note text or null
+     */
+    function getNoteForPS(psNumber) {
+        const notes = {
+            1: {
+                text: "Questions updated for clarity. Please check solutions.",
+                date: "Feb 13, 2026"
+            }
+        };
+        return notes[psNumber] || null;
+    }
+
+    /**
      * Create PS card HTML
      * @param {Object} ps - Problem session object
      * @param {number} index - Index for animation delay
@@ -66,7 +81,8 @@
      */
     function createPSCard(ps, index) {
         const animationDelay = (index * 0.1) + 0.4;
-        
+        const note = getNoteForPS(ps.number);
+
         return `
             <div class="ps-card" style="animation-delay: ${animationDelay}s">
                 <span class="ps-number">PS ${ps.number}</span>
@@ -88,6 +104,12 @@
                         </span>
                     `}
                 </div>
+                ${note ? `
+                    <div class="ps-note">
+                        <div class="ps-note-date">${note.date}</div>
+                        <div class="ps-note-text">${note.text}</div>
+                    </div>
+                ` : ''}
             </div>
         `;
     }
@@ -123,9 +145,9 @@
     function updateLastUpdated() {
         const lastUpdatedElement = document.getElementById('lastUpdated');
         const now = new Date();
-        const options = { 
-            year: 'numeric', 
-            month: 'long', 
+        const options = {
+            year: 'numeric',
+            month: 'long',
             day: 'numeric',
             hour: '2-digit',
             minute: '2-digit'
@@ -150,7 +172,7 @@
             updateLastUpdated();
         } catch (error) {
             console.error('Error initializing page:', error);
-            document.getElementById('psGrid').innerHTML = 
+            document.getElementById('psGrid').innerHTML =
                 '<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Error loading problem sessions. Please refresh the page.</p>';
         }
     }
