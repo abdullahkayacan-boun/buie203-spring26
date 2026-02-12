@@ -78,7 +78,7 @@
     function getNoteForPS(psNumber) {
         const notes = {
             1: {
-                text: "Questions updated for clarity. Please check solutions.",
+                text: "Questions updated for clarity. Please check solutions",
                 date: "Feb 13, 2026"
             }
         };
