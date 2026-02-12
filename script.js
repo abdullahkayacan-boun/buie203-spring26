@@ -84,22 +84,23 @@
         const animationDelay = (index * 0.1) + 0.4;
         const note = getNoteForPS(ps.number);
 
-        // Add timestamp to URLs for cache busting (always fresh)
-        const timestamp = new Date().getTime();
-        const questionUrlWithTimestamp = `${ps.questionUrl}?t=${timestamp}`;
-        const solutionUrlWithTimestamp = ps.solutionUrl ? `${ps.solutionUrl}?t=${timestamp}` : null;
-
         return `
             <div class="ps-card" style="animation-delay: ${animationDelay}s">
                 <span class="ps-number">PS ${ps.number}</span>
                 <h3 class="ps-title">Problem Session ${ps.number}</h3>
                 <div class="ps-links">
-                    <a href="${questionUrlWithTimestamp}" class="ps-link questions" target="_blank" rel="noopener">
+                    <a href="#" 
+                       onclick="event.preventDefault(); window.open('${ps.questionUrl}?t=' + Date.now(), '_blank');" 
+                       class="ps-link questions" 
+                       rel="noopener">
                         <span>📄</span>
                         <span>Questions</span>
                     </a>
-                    ${solutionUrlWithTimestamp ? `
-                        <a href="${solutionUrlWithTimestamp}" class="ps-link solutions" target="_blank" rel="noopener">
+                    ${ps.solutionUrl ? `
+                        <a href="#" 
+                           onclick="event.preventDefault(); window.open('${ps.solutionUrl}?t=' + Date.now(), '_blank');" 
+                           class="ps-link solutions" 
+                           rel="noopener">
                             <span>✓</span>
                             <span>Solutions</span>
                         </a>
