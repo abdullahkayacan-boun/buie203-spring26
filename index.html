@@ -46,13 +46,7 @@
                         <h2>📢 Announcements</h2>
                     </div>
                     <div class="announcements-list" id="announcementsList">
-                        <div class="announcement-item">
-                            <div class="announcement-date">Feb 11, 2026</div>
-                            <div class="announcement-content">
-                                <h3>No Class Tomorrow</h3>
-                                <p>There will be no class on Thursday, February 12, 2026.</p>
-                            </div>
-                        </div>
+                        <!-- Announcements will be loaded dynamically from announcements.json -->
                     </div>
                 </aside>
 
@@ -84,7 +78,15 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Load script.js with timestamp to always get fresh version
+        (function () {
+            const script = document.createElement('script');
+            script.src = 'script.js?t=' + new Date().getTime();
+            script.async = false;
+            document.body.appendChild(script);
+        })();
+    </script>
 </body>
 
 </html>

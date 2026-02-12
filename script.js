@@ -59,18 +59,6 @@
     }
 
     /**
-     * Get version for specific PS (for cache busting)
-     * @param {number} psNumber - PS number
-     * @returns {string} Version string
-     */
-    function getVersionForPS(psNumber) {
-        const versions = {
-            1: "v2" // Update this when you change PS 1 files
-        };
-        return versions[psNumber] || "v1";
-    }
-
-    /**
      * Get note for specific PS (if any)
      * @param {number} psNumber - PS number
      * @returns {string|null} Note text or null
@@ -85,6 +73,7 @@
         return notes[psNumber] || null;
     }
 
+
     /**
      * Create PS card HTML
      * @param {Object} ps - Problem session object
@@ -94,23 +83,23 @@
     function createPSCard(ps, index) {
         const animationDelay = (index * 0.1) + 0.4;
         const note = getNoteForPS(ps.number);
-        const version = getVersionForPS(ps.number);
 
-        // Add version parameter to URLs for cache busting
-        const questionUrlWithVersion = `${ps.questionUrl}?v=${version}`;
-        const solutionUrlWithVersion = ps.solutionUrl ? `${ps.solutionUrl}?v=${version}` : null;
+        // Add timestamp to URLs for cache busting (always fresh)
+        const timestamp = new Date().getTime();
+        const questionUrlWithTimestamp = `${ps.questionUrl}?t=${timestamp}`;
+        const solutionUrlWithTimestamp = ps.solutionUrl ? `${ps.solutionUrl}?t=${timestamp}` : null;
 
         return `
             <div class="ps-card" style="animation-delay: ${animationDelay}s">
                 <span class="ps-number">PS ${ps.number}</span>
                 <h3 class="ps-title">Problem Session ${ps.number}</h3>
                 <div class="ps-links">
-                    <a href="${questionUrlWithVersion}" class="ps-link questions" target="_blank" rel="noopener">
+                    <a href="${questionUrlWithTimestamp}" class="ps-link questions" target="_blank" rel="noopener">
                         <span>📄</span>
                         <span>Questions</span>
                     </a>
-                    ${solutionUrlWithVersion ? `
-                        <a href="${solutionUrlWithVersion}" class="ps-link solutions" target="_blank" rel="noopener">
+                    ${solutionUrlWithTimestamp ? `
+                        <a href="${solutionUrlWithTimestamp}" class="ps-link solutions" target="_blank" rel="noopener">
                             <span>✓</span>
                             <span>Solutions</span>
                         </a>
@@ -157,6 +146,66 @@
     }
 
     /**
+     * Fetch announcements from JSON file
+     * @returns {Promise<Array>} Array of announcement objects
+     */
+    async function fetchAnnouncements() {
+        try {
+            // Add timestamp to prevent caching
+            const timestamp = new Date().getTime();
+            const response = await fetch(`announcements.json?t=${timestamp}`, {
+                cache: 'no-store', // Disable browser cache
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
+
+            if (!response.ok) {
+                return [];
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching announcements:', error);
+            return [];
+        }
+    }
+
+    /**
+     * Render announcements to the page
+     * @param {Array} announcements - Array of announcement objects
+     */
+    function renderAnnouncements(announcements) {
+        const announcementsList = document.getElementById('announcementsList');
+
+        if (announcements.length === 0) {
+            announcementsList.innerHTML = `
+                <div class="announcement-item">
+                    <div class="announcement-content">
+                        <p style="text-align: center; opacity: 0.7;">No announcements at this time.</p>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        // Sort by date (newest first) and render
+        const html = announcements.map(announcement => `
+            <div class="announcement-item">
+                <div class="announcement-date">${announcement.date}</div>
+                <div class="announcement-content">
+                    <h3>${announcement.title}</h3>
+                    <p>${announcement.text}</p>
+                </div>
+            </div>
+        `).join('');
+
+        announcementsList.innerHTML = html;
+    }
+
+    /**
      * Update last updated timestamp
      */
     function updateLastUpdated() {
@@ -180,6 +229,10 @@
             // Show loading state
             const psGrid = document.getElementById('psGrid');
             psGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Loading problem sessions...</p>';
+
+            // Fetch and render announcements (always fresh)
+            const announcements = await fetchAnnouncements();
+            renderAnnouncements(announcements);
 
             // Detect and render problem sessions
             const problemSessions = await detectProblemSessions();
