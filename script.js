@@ -66,8 +66,8 @@
     function getNoteForPS(psNumber) {
         const notes = {
             1: {
-                text: "Questions updated for clarity. Please check solutions",
-                date: "Feb 13, 2026"
+                text: "Q4 (Vehicle Routing Problem) has been removed — beyond course scope.",
+                date: "Feb 22, 2026"
             }
         };
         return notes[psNumber] || null;
