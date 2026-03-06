@@ -68,6 +68,10 @@
             1: {
                 text: "Q4 (Vehicle Routing Problem) has been removed — beyond course scope.",
                 date: "Feb 22, 2026"
+            },
+            4: {
+                text: "Added Q2 as an additional example for branch and bound since it includes infeasibility case also.",
+                date: "Mar 06, 2026"
             }
         };
         return notes[psNumber] || null;
@@ -87,7 +91,7 @@
         return `
             <div class="ps-card" style="animation-delay: ${animationDelay}s">
                 <span class="ps-number">PS ${ps.number}</span>
-                <h3 class="ps-title">Problem Session ${ps.number}</h3>
+                <h3 class="ps-title">PS ${ps.number}</h3>
                 <div class="ps-links">
                     <a href="#" 
                        onclick="event.preventDefault(); window.open('${ps.questionUrl}?t=' + Date.now(), '_blank');" 

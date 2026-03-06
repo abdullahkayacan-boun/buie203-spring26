@@ -1,12 +1,17 @@
 [
     {
+        "date": "Mar 06, 2026",
+        "title": "NEW: Office Hours Update",
+        "text": "Office hours are now held 15:00–17:00 on Mondays. This is also valid for this upcoming Monday (9 March)."
+    },
+    {
         "date": "Feb 22, 2026",
         "title": "Office Hours",
-        "text": "Office hours are held every Monday, 14:00–16:00, at office M4010."
+        "text": "<s>Office hours are held every Monday, 14:00–16:00, at office M4010.</s>"
     },
     {
         "date": "Feb 11, 2026",
         "title": "No Class Tomorrow",
-        "text": "There will be no class on Thursday, February 12, 2026."
+        "text": "<s>There will be no class on Thursday, February 12, 2026.</s>"
     }
 ]

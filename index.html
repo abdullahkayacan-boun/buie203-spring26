@@ -11,7 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>IE 203 - Problem Sessions</title>
+    <title>IE 203 - PS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,11 +26,42 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Introduction Card -->
-            <!-- <div class="intro-card">
-                <h2>IE 203</h2>
-                <p></p>
-            </div> -->
+            <!-- General Info Section -->
+            <section class="general-info-section"
+                style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; font-size: 0.95rem;">
+
+                    <!-- Column 1 -->
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <div><strong>Office Hours:</strong> 15:00-17:00 on Mondays</div>
+                        <div><strong>PS:</strong> 15:00-17:00 on Thursdays</div>
+                        <div
+                            style="font-size: 0.9rem; line-height: 1.4; color: var(--text-primary); background: rgba(0,0,0,0.03); padding: 0.75rem; border-radius: 8px; margin-top: 0.2rem;">
+                            <strong>Past Exams:</strong> You can reach last year's questions and solutions from the
+                            <a href="https://collections.library.bogazici.edu.tr/search*tur/r" target="_blank"
+                                rel="noopener"
+                                style="color: var(--primary-color); text-decoration: underline; font-weight: 500;">following
+                                link</a>
+                            by searching <em>IE 203</em>. You may need to login by clicking the top-right "Login"
+                            link on the page.
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div><strong>Quiz 1:</strong> March 11 Wednesday at 18:00
+                            <ul
+                                style="margin: 0.4rem 0 0 1.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                                <li>M1200: ABATAY-ÇİFTÇİOĞLU</li>
+                                <li>M1170: DAĞTAŞ-KUTLU</li>
+                                <li>M1171: MANAVUŞAK-YÜREK</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
 
             <!-- Two-Column Layout: Announcements + Problem Sessions -->
             <div class="content-wrapper">
@@ -44,10 +75,10 @@
                     </div>
                 </aside>
 
-                <!-- Problem Sessions Section -->
+                <!-- PS Section -->
                 <section class="ps-section">
                     <div class="section-header">
-                        <h2>📚 Problem Sessions</h2>
+                        <h2>📚 PS</h2>
                     </div>
                     <div class="ps-grid" id="psGrid">
                         <!-- PS items will be dynamically generated -->
