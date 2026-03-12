@@ -70,8 +70,8 @@
                 date: "Feb 22, 2026"
             },
             4: {
-                text: "Added Q2 as an additional example for branch and bound since it includes infeasibility case also.",
-                date: "Mar 06, 2026"
+                text: "Q2 solution was erroneous. The question and solution have been changed and updated.",
+                date: "Mar 12, 2026"
             }
         };
         return notes[psNumber] || null;
