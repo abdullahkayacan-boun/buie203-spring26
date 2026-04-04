@@ -72,6 +72,10 @@
             4: {
                 text: "Q2 solution was erroneous. The question and solution have been changed and updated.",
                 date: "Mar 12, 2026"
+            },
+            7: {
+                text: "See Bazaraa's Nonlinear Programming for other examples of unconstrained optimization methods like Cyclic Coordinate Search and Method of Newton.",
+                date: "Apr 4, 2026"
             }
         };
         return notes[psNumber] || null;
