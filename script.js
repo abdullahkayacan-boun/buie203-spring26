@@ -74,7 +74,7 @@
                 date: "Mar 12, 2026"
             },
             7: {
-                text: "See Bazaraa's Nonlinear Programming for other examples of unconstrained optimization methods like Cyclic Coordinate Search and Method of Newton.",
+                text: "You can check Bazaraa's Nonlinear Programming for other examples of unconstrained optimization methods like Cyclic Coordinate Search and Method of Newton.",
                 date: "Apr 4, 2026"
             }
         };
