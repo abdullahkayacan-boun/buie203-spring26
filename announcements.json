@@ -1,5 +1,10 @@
 [
     {
+        "date": "Apr 16, 2026",
+        "title": "Midterm Exam Results Published",
+        "text": "Midterm exam results are published. <a href=\"grades/mtgrades.pdf\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--primary-color); text-decoration: underline; font-weight: 500;\">Click here to view</a>."
+    },
+    {
         "date": "Apr 6, 2026",
         "title": "Quiz 1 Exam Results Published",
         "text": "Quiz 1 exam results are published. <a href=\"grades/q1grades.pdf\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--primary-color); text-decoration: underline; font-weight: 500;\">Click here to view</a>."
