@@ -1,5 +1,10 @@
 [
     {
+        "date": "Apr 24, 2026",
+        "title": "Exam Paper Review",
+        "text": "Students can see their exam papers on Monday (Apr 27) between 10:00-12:00 and 15:00-16:00 in M4090."
+    },
+    {
         "date": "Apr 16, 2026",
         "title": "Midterm Exam Results Published",
         "text": "Midterm exam results are published. <a href=\"grades/mtgrades.pdf\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--primary-color); text-decoration: underline; font-weight: 500;\">Click here to view</a>."
