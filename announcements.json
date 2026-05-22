@@ -1,5 +1,15 @@
 [
     {
+        "date": "May 22, 2026",
+        "title": "Quiz 2 Questions & Solutions Published",
+        "text": "Quiz 2 questions and solutions are now available. You can access them from the links in the Exams section below."
+    },
+    {
+        "date": "May 13, 2026",
+        "title": "MT Q2 Solution Updated",
+        "text": "Note that the MT Q2 solution is updated on May 13 and contains the correct way of generating Gomory cuts in MILPs."
+    },
+    {
         "date": "Apr 29, 2026",
         "title": "Midterm Questions & Answers Published + Extra Review Session",
         "text": "Midterm questions and solutions are now available. <a href=\"exams/MT.pdf\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--primary-color); text-decoration: underline; font-weight: 500;\">Click here to view</a>. Additionally, an extra exam review session will be held on Thursday (Apr 30) between 10:00–11:00 in M4050 (Meeting Room 1)."

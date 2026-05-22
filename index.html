@@ -27,8 +27,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Quiz 2 Seating Plan -->
-            <section
-                style="background: rgba(99, 102, 241, 0.1); border: 2px solid var(--primary); border-radius: 12px; padding: 1.1rem 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">
+            <section style="display: none; background: rgba(99, 102, 241, 0.1); border: 2px solid var(--primary); border-radius: 12px; padding: 1.1rem 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">
                 <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem;">
                     <span style="font-size: 1.1rem;">📍</span>
                     <strong style="font-size: 1rem; color: var(--primary-light);">Quiz 2 Seating Plan</strong>
@@ -41,16 +40,15 @@
             </section>
 
             <!-- Midterm Grades Banner -->
-            <a href="grades/mtgrades.pdf" target="_blank" rel="noopener" class="quiz1-banner" style="margin-bottom: 1rem;">
+            <a href="grades/mtgrades.pdf" target="_blank" rel="noopener" class="quiz1-banner" style="display: none; margin-bottom: 1rem;">
                 <span>Click to see Midterm grades</span>
             </a>
             <!-- Quiz 1 Grades Banner -->
-            <a href="grades/q1grades.pdf" target="_blank" rel="noopener" class="quiz1-banner">
+            <a href="grades/q1grades.pdf" target="_blank" rel="noopener" class="quiz1-banner" style="display: none;">
                 <span>Click to see Quiz 1 grades</span>
             </a>
             <!-- Corrections Section -->
-            <section
-                style="background: #fff5f5; border: 2px solid #c53030; border-radius: 12px; padding: 1.1rem 1.4rem; margin-bottom: 2rem; color: #7f1d1d;">
+            <section style="display: none; background: #fff5f5; border: 2px solid #c53030; border-radius: 12px; padding: 1.1rem 1.4rem; margin-bottom: 2rem; color: #7f1d1d;">
                 <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem;">
                     <span style="font-size: 1.05rem;">⚠️</span>
                     <strong style="font-size: 0.95rem; color: #c53030;">Corrections</strong>
@@ -75,11 +73,6 @@
 
                     <!-- Column 1 -->
                     <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                        <div>
-                            <strong>TA Office Hours:</strong> 15:00-16:00 on Mondays.
-                            Mail if you need to schedule another time.
-                        </div>
-                        <div><strong>PS:</strong> 15:00-17:00 on Thursdays</div>
                         <div
                             style="font-size: 0.9rem; line-height: 1.4; color: var(--text-primary); background: rgba(0,0,0,0.03); padding: 0.75rem; border-radius: 8px; margin-top: 0.2rem;">
                             <strong>Past Exams:</strong> You can reach last year's questions and solutions from the
@@ -112,6 +105,15 @@
                                 style="color: var(--primary-color); text-decoration: underline; font-weight: 500;">Solutions</a>
                             &nbsp;·&nbsp;
                             <a href="grades/mtgrades.pdf" target="_blank" rel="noopener" class="grades-animating">Grades</a>
+                        </div>
+                        <div
+                            style="font-size: 0.9rem; line-height: 1.4; color: var(--text-primary); background: rgba(0,0,0,0.03); padding: 0.75rem; border-radius: 8px; margin-top: 0.5rem;">
+                            <strong>Quiz 2 (Spring 2026):</strong>&nbsp;
+                            <a href="exams/IE203Quiz2Spring2026.pdf" target="_blank" rel="noopener"
+                                style="color: var(--primary-color); text-decoration: underline; font-weight: 500;">Questions</a>
+                            &nbsp;·&nbsp;
+                            <a href="exams/IE203Quiz2Spring2026Solutions.pdf" target="_blank" rel="noopener"
+                                style="color: var(--primary-color); text-decoration: underline; font-weight: 500;">Solutions</a>
                         </div>
                     </div>
 
