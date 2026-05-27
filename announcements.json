@@ -1,5 +1,10 @@
 [
     {
+        "date": "May 27, 2026",
+        "title": "Quiz 2 Exam Results Published",
+        "text": "Quiz 2 exam results are published. <a href=\"grades/q2grades.pdf\" target=\"_blank\" rel=\"noopener\" style=\"color: var(--primary-color); text-decoration: underline; font-weight: 500;\">Click here to view</a>."
+    },
+    {
         "date": "May 22, 2026",
         "title": "Quiz 2 Questions & Solutions Published",
         "text": "Quiz 2 questions and solutions are now available."
